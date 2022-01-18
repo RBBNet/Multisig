@@ -98,7 +98,7 @@ Um exemplo de utilização dessa biblioteca encontra-se neste repositório em 'm
 
 Para facilitar ainda mais o uso de uma carteira Multisig, uma camada pode ser adicionada entre a biblioteca safe-core-sdk e o dApp a ser utilizado. Algumas classes foram criadas para abstrair o uso da biblioteca safe-core-sdk. Estas classes estão reunidas no arquivo multiSig.ts deste respositório. Para utilizar estas classes, insira o arquivo multiSig.ts deste repositório na pasta src do diretório instalado ou no dapp já existente.
 
-### Multisig.ts
+### multiSig.ts
 
 > :warning: **O envio de múltiplas transações não funcionará usando este arquivo!**
 
