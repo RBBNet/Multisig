@@ -92,8 +92,7 @@ Acesse https://github.com/gnosis/safe-core-sdk/tree/main/packages/safe-core-sdk 
     ```
     npm install @gnosis.pm/safe-core-sdk
     ```
-* Passo 4: Execute o comando ```yarn``` ou ```npm install``` para certificar que tudo foi instalado corretamente.
-
+    
 Um exemplo de utilização dessa biblioteca encontra-se neste repositório em 'my-safe-app/src/App.tsx'.
 
 Para facilitar ainda mais o uso de uma carteira Multisig, uma camada pode ser adicionada entre a biblioteca safe-core-sdk e o dApp a ser utilizado. Algumas classes foram criadas para abstrair o uso da biblioteca safe-core-sdk. Estas classes estão reunidas no arquivo multiSig.ts deste respositório. Para utilizar estas classes, insira o arquivo multiSig.ts deste repositório na pasta src do diretório instalado ou no dapp já existente.
