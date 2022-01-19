@@ -74,26 +74,21 @@ Acesse https://github.com/gnosis/safe-core-sdk/tree/main/packages/safe-core-sdk 
 
 ## DAPP (Como utilizar a Multisig em um dApp)
 
-[Caso o uso da Multisig seja para um dapp já existente, pule para o passo 3]
-
-* Passo 1: Instale o template safe app.
-    ```
-    npx create-react-app my-safe-app --template @gnosis.pm/cra-template-safe-app
-    ```
-* Passo 2: Acesse o diretório do template.
+* Passo 1: Clone este repositório.
+* Passo 2: Acesse o diretório my-safe-app.
     ```
     cd my-safe-app
     ```
-* Passo 3: Instale a biblioteca safe core sdk.
+* Passo 3: Instale as dependências.
     ```
-    yarn add @gnosis.pm/safe-core-sdk
+    yarn
     ```
-    ou
+* Passo 4: Configure seu dApp em 'my-safe-app/src/App.tsx' (há um exemplo de utilização da biblioteca safe-core-sdk neste caminho) e inicie um servidor local de desenvolvimento.
     ```
-    npm install @gnosis.pm/safe-core-sdk
+    yarn start
     ```
-    
-Um exemplo de utilização dessa biblioteca encontra-se neste repositório em 'my-safe-app/src/App.tsx'.
+
+Caso o uso da Multisig seja para um dapp já existente, insira a biblioteca safe-core-sdk através do comando ```yarn add @gnosis.pm/safe-core-sdk``` e siga o exemplo dado em 'my-safe-app/src/App.tsx'.
 
 Para facilitar ainda mais o uso de uma carteira Multisig, uma camada pode ser adicionada entre a biblioteca safe-core-sdk e o dApp a ser utilizado. Algumas classes foram criadas para abstrair o uso da biblioteca safe-core-sdk. Estas classes estão reunidas no arquivo multiSig.ts deste respositório. Para utilizar estas classes, insira o arquivo multiSig.ts deste repositório na pasta src do diretório instalado ou no dapp já existente.
 
