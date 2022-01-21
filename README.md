@@ -8,12 +8,16 @@
     ``` 
     git clone https://github.com/gnosis/safe-contracts.git 
     ```
-* Passo 2: Instale as dependências.
+* Passo 2: Acesse o diretório safe-contracts.
+    ```
+    cd safe-contracts
+    ```
+* Passo 3: Instale as dependências.
     ``` 
     yarn
     ```
-* Passo 3: Acesse o arquivo .env do diretório criado no passo 1, insira em MNEMONIC (dentro das aspas duplas) as 12 palavras de sua carteira, insira em NODE_URL (dentro das aspas duplas) o URL do seu nó e salve o arquivo como .env.
-* Passo 4: Acesse o diretório 'contracts', abra o arquivo GnosisSafe.sol, substitua a seguinte função: 
+* Passo 4: Acesse o arquivo .env do diretório criado no passo 1, insira em MNEMONIC (dentro das aspas duplas) as 12 palavras de sua carteira, insira em NODE_URL (dentro das aspas duplas) o URL do seu nó e salve o arquivo como .env.
+* Passo 5: Acesse o diretório 'contracts', abra o arquivo GnosisSafe.sol, substitua a seguinte função: 
     ```
     function getChainId() public view returns (uint256) {
         uint256 id;
@@ -32,7 +36,16 @@
     }
     ```
     substitua a palavra "id" pelo id da sua rede e salve o arquivo. Para algumas redes, a função (antes da substituição) pode não funcionar, por isso, faz-se necessário esta substituição, a fim de garantir a plena execução do código.
-* Passo 5: Faça o deploy.
+* Passo 6: Acesse o arquivo hardhat.config.ts e defina o atributo gas para 0 em networks > hardhat, como segue abaixo:
+    ```
+    hardhat: {
+      allowUnlimitedContractSize: true,
+      blockGasLimit: 100000000,
+      gas: 0
+    },
+    ```
+* Passo 7: Acesse o diretório 'src/deploy' e atribua o valor false para o atributo 'deterministicDeployment' (presente em todos os arquivos) para todas as ocorrências desse atributo nos arquivos do diretório.
+* Passo 8: Faça o deploy.
     ```
     yarn build
     yarn hardhat --network custom deploy
