@@ -71,7 +71,7 @@
     truffle deploy --network rbb.
     ```
 
-Após o deploy, anote os endereços gerados para os contratos MultiSend, SafeMasterCopy e GnosisSafeProxyFactory. Eles serão usados no dApp para gerar uma carteira.
+Após o deploy, anote os endereços gerados para os contratos MultiSend, GnosisSafe (SafeMasterCopy) e GnosisSafeProxyFactory. Eles serão usados no dApp para gerar uma carteira.
 
 ## Contratos
 
