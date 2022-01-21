@@ -79,7 +79,7 @@ Após o deploy, anote os endereços gerados para os contratos MultiSend, GnosisS
 * GnosisSafe (SafeMasterCopy): este contrato é um template de uma carteira.
 * GnosisSafeProxyFactory: contrato responsável por instanciar outros contratos utilizando o template mencionado acima. Cada contrato instanciado é o contrato de uma carteira.
 
-O contrato fábrica (GnosisSafeProxyFactory) recebe os parâmetros necessários para gerar uma carteira (threshold, owners...) e faz o deploy do contrato GnosisSafe (template) com estes parâmetros. Cada deploy gera um endereço, este endereço é o endereço da carteira Multisig.
+O contrato fábrica (GnosisSafeProxyFactory) recebe os parâmetros necessários (threshold, owners...) para gerar uma carteira e faz o deploy do contrato GnosisSafe (template) com estes parâmetros. Cada deploy gera um endereço, este endereço é o endereço da carteira Multisig.
 
 A biblioteca safe-core-sdk foi utilizada para facilitar o acesso e utilização dos métodos dos contratos da Gnosis em uma aplicação (dApp).
 
