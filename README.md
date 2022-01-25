@@ -96,7 +96,7 @@ Acesse https://github.com/gnosis/safe-core-sdk/tree/main/packages/safe-core-sdk 
     ```
     yarn
     ```
-* Passo 4: Configure seu dApp em 'my-safe-app/src/App.tsx' (há um exemplo de utilização da biblioteca safe-core-sdk neste caminho) e inicie um servidor local de desenvolvimento.
+* Passo 4: Configure seu dApp em 'my-safe-app/src/App.tsx' (há um exemplo de utilização da biblioteca safe-core-sdk neste caminho) e inicie um servidor local de desenvolvimento (ao iniciar o servidor, uma página de url 'localhost:3000' será aberta no navegador).
     ```
     yarn start
     ```
