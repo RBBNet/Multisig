@@ -52,6 +52,10 @@ const SafeApp = (): React.ReactElement => {
         ethers,
         signer: owner1
       })
+      
+      /*
+      *** CONFIGURE ESTE BLOCO [INÍCIO] ***
+      */
       configContract = {'': { //Dentro das aspas, insira o id da rede
         multiSendAddress: '', //Dentro das aspas, insira o endereço do contrato multiSend (gerado ao fazer o deploy)
         safeMasterCopyAddress: '', //Dentro das aspas, insira o endereço do contrato safeMasterCopy (gerado ao fazer o deploy)
@@ -59,7 +63,11 @@ const SafeApp = (): React.ReactElement => {
       } }
       const safeFactory = await SafeFactory.create({ ethAdapter:ethAdapterOwner1, isL1SafeMasterCopy: true, contractNetworks: configContract, safeVersion: safeVersion})
       const threshold = 3 //Defina a quantidade de proprietários da carteira (para este exemplo está sendo 3)
-      const owners = ['', '', ''] //Dentro das aspas, insira os endereços dos 3 (neste exemplo) proprietários da carteira 
+      const owners = ['', '', ''] //Dentro das aspas, insira os endereços dos 3 (neste exemplo) proprietários da carteira
+      /*
+      *** CONFIGURE ESTE BLOCO [FIM] ***
+      */
+     
       const safeSdkd = await safeFactory.deploySafe({ owners, threshold })
       
       safeSdk = await safeSdkd.connect({ ethAdapter: ethAdapterOwner1, isL1SafeMasterCopy: true, safeAddress: addresssafe, contractNetworks: configContract})
@@ -95,11 +103,15 @@ const SafeApp = (): React.ReactElement => {
           "type": "function"
         }
       ]*/
+      
+      /*
+      *** CONFIGURE ESTE BLOCO [INÍCIO] ***
+      */      
       const contract = new ethers.Contract("", [], provider)
       //Dentro das aspas, insira o endereço do contrato a ser utilizado pela carteira
       //Dentro dos colchetes, insira a abi do contrato a ser utilizado pela carteira
-      const methodName = "store";
-      const params = [1];
+      const methodName = ""; //Dentro das aspas, insira o nome do método do contrato a ser utilizado pela carteira
+      const params = []; //Dentro dos colchetes, insira os parâmetros do método do contrato a ser utilizado pela carteira
       const transactions: SafeTransactionDataPartial = {
         to: '', //Dentro das aspas, insira o endereço do contrato a ser utilizado pela carteira
         value: '0',
@@ -107,6 +119,10 @@ const SafeApp = (): React.ReactElement => {
         safeTxGas: 220000,
         gasPrice: 0,
       }
+      /*
+      *** CONFIGURE ESTE BLOCO [FIM] ***
+      */
+      
       safeTransaction = await safeSdk.createTransaction(transactions)
 
     } catch (e) {
@@ -122,8 +138,14 @@ const SafeApp = (): React.ReactElement => {
 }, [safe,sdk])
 
 const assign = useCallback(async () => {
-  
+    /*
+    *** CONFIGURE ESTE BLOCO [INÍCIO] ***
+    */
     const owner2 = provider.getSigner("") //Dentro das aspas, insira o endereço do owner2
+    /*
+    *** CONFIGURE ESTE BLOCO [FIM] ***
+    */
+      
     const ethAdapterOwner2 = new EthersAdapter({ ethers, signer: owner2 })
     const safeSdk2 = await safeSdk.connect({ ethAdapter: ethAdapterOwner2, safeAddress: addresssafe, contractNetworks: configContract})
     const txHash2 = await safeSdk2.getTransactionHash(safeTransaction)
@@ -131,14 +153,20 @@ const assign = useCallback(async () => {
     await approveTxResponse.transactionResponse?.wait()
 
 }, [safe,sdk])
-const execute = useCallback(async () => {
-  
+const execute = useCallback(async () => {  
+  /*
+  *** CONFIGURE ESTE BLOCO [INÍCIO] ***
+  */      
   const owner3 = provider.getSigner("") //Dentro das aspas, insira o endereço do owner3
+  /*
+  *** CONFIGURE ESTE BLOCO [FIM] ***
+  */
+      
   const ethAdapterOwner3 = new EthersAdapter({ ethers, signer: owner3 })
   const safeSdk3 = await safeSdk.connect({ ethAdapter: ethAdapterOwner3, safeAddress:addresssafe })
   const options = {
     gasLimit: 2200000,
-    gasPrice: 0, //Optional
+    gasPrice: 0,
   }
   const executeTxResponse = await safeSdk3.executeTransaction(safeTransaction,options)
   await executeTxResponse.transactionResponse?.wait()
