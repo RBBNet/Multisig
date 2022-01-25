@@ -58,7 +58,7 @@ const SafeApp = (): React.ReactElement => {
       */
       configContract = {'': { //Dentro das aspas, insira o id da rede
         multiSendAddress: '', //Dentro das aspas, insira o endereço do contrato multiSend (gerado ao fazer o deploy)
-        safeMasterCopyAddress: '', //Dentro das aspas, insira o endereço do contrato safeMasterCopy (gerado ao fazer o deploy)
+        safeMasterCopyAddress: '', //Dentro das aspas, insira o endereço do contrato GnosisSafe (safeMasterCopy) (gerado ao fazer o deploy)
         safeProxyFactoryAddress: '' //Dentro das aspas, insira o endereço do contrato safeProxyFactory (gerado ao fazer o deploy)
       } }
       const safeFactory = await SafeFactory.create({ ethAdapter:ethAdapterOwner1, isL1SafeMasterCopy: true, contractNetworks: configContract, safeVersion: safeVersion})
