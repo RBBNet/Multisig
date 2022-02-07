@@ -16,7 +16,7 @@
     ``` 
     yarn
     ```
-* Passo 4: Acesse o arquivo .env.sample do diretório criado no passo 1, insira em MNEMONIC (dentro das aspas duplas) as 12 palavras de sua carteira, insira em NODE_URL (dentro das aspas duplas) o URL do seu nó e salve o arquivo como .env.env.
+* Passo 4: Acesse o arquivo .env.sample do diretório criado no passo 1, insira em MNEMONIC (dentro das aspas duplas) as 12 palavras de sua carteira, insira em NODE_URL (dentro das aspas duplas) o URL do seu nó e salve o arquivo como .env.
 * Passo 5: Acesse o diretório 'contracts', abra o arquivo GnosisSafe.sol, substitua a seguinte função: 
     ```
     function getChainId() public view returns (uint256) {
